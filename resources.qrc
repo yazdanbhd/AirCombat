@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="background">resources/images/background.png</file>
+        <file alias="plane1">resources/images/plane1.png</file>
+        <file alias="plane2">resources/images/plane2.png</file>
+        <file alias="plane3">resources/images/plane3.png</file>
+        <file alias="plane4">resources/images/plane4.png</file>
+        <file alias="ship">resources/images/ship.png</file>
+    </qresource>
+</RCC>
