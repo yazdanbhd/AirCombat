@@ -6,5 +6,6 @@
         <file alias="plane3">resources/images/plane3.png</file>
         <file alias="plane4">resources/images/plane4.png</file>
         <file alias="ship">resources/images/ship.png</file>
+        <file alias="bullet">resources/images/bullet.png</file>
     </qresource>
 </RCC>

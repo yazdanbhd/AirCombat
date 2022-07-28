@@ -1,5 +1,7 @@
 #include "Player.h"
+#include "Bullet.h"
 #include <QKeyEvent>
+#include <QGraphicsScene>
 
 Player::Player(int width,int height,const char* icon): width(width),height(height)
 {
@@ -22,4 +24,10 @@ void Player::keyPressEvent(QKeyEvent *event) {
         setPos(x() - 7,y());
     if(event->key() == Qt::Key_Right)
         setPos(x() + 7,y());
+    if(event->key() == Qt::Key_Space)
+    {
+        auto bullet = new Bullet();
+        scene()->addItem(bullet);
+        bullet->setPos(x()+60, y() + 25);
+    }
 }
