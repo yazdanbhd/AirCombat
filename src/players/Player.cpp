@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Bullet.h"
+#include "Enemy.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>
 
@@ -21,13 +22,26 @@ QRectF Player::boundingRect() const {
 void Player::keyPressEvent(QKeyEvent *event) {
 
     if(event->key() == Qt::Key_Left)
-        setPos(x() - 7,y());
+        setPos(x() - 11,y());
     if(event->key() == Qt::Key_Right)
-        setPos(x() + 7,y());
+        setPos(x() + 11,y());
     if(event->key() == Qt::Key_Space)
     {
-        auto bullet = new Bullet();
-        scene()->addItem(bullet);
-        bullet->setPos(x()+60, y() + 25);
+        auto bulletsOFLeftWing = new Bullet();
+        scene()->addItem(bulletsOFLeftWing);
+        bulletsOFLeftWing->setPos(x() - 8, y());
+
+        auto bulletsOFRightWing = new Bullet();
+        scene()->addItem(bulletsOFRightWing);
+        bulletsOFRightWing->setPos(x() + 35, y());
+
     }
+}
+
+void Player::spawn()
+{
+
+    auto enemy = new Enemy(84,68,":/images/plane2");
+    scene()->addItem(enemy);
+
 }

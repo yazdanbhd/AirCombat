@@ -4,8 +4,10 @@
 #include <QGraphicsView>
 #include "../players/Player.h"
 
+
 class Game: public QGraphicsView
 {
+
 
 public:
     Game();

@@ -2,9 +2,11 @@
 #define AIRCOMBAT_PLAYER_H
 
 #include <QGraphicsPixmapItem>
+#include <QObject>
 
-class Player: public QGraphicsPixmapItem
+class Player: public QObject,public QGraphicsPixmapItem
 {
+    Q_OBJECT
 private:
     int width{};
     int height{};
@@ -14,6 +16,9 @@ public:
 
     void keyPressEvent(QKeyEvent *event) override;
     QRectF boundingRect() const override;
+
+public slots:
+    void spawn();
 };
 
 

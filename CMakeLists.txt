@@ -14,7 +14,7 @@ find_package(Qt6 COMPONENTS
         Multimedia
         REQUIRED)
 
-add_executable(AirCombat main.cpp resources.qrc src/views/Game.cpp src/views/Game.h src/players/Player.cpp src/players/Player.h src/players/Bullet.cpp src/players/Bullet.h)
+add_executable(AirCombat main.cpp resources.qrc src/views/Game.cpp src/views/Game.h src/players/Player.cpp src/players/Player.h src/players/Bullet.cpp src/players/Bullet.h src/players/Enemy.cpp src/players/Enemy.h)
 target_link_libraries(AirCombat
         Qt::Core
         Qt::Gui

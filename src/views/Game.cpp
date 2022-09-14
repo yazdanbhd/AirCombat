@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "../players/Player.h"
+#include "../players/Enemy.h"
+#include <QTimer>
 
 
 Game::Game(): QGraphicsView()
@@ -19,11 +21,21 @@ Game::Game(): QGraphicsView()
     setScene(scene);
 
     // add player to game
-    player = new Player(178,155,":/images/plane1");
+    player = new Player(84,68,":/images/plane1");
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
     scene->addItem(player);
     player->setPos(750,600);
 
+     //add enemies to game
+    auto SpawnTimer = new QTimer();
+    connect(SpawnTimer,&QTimer::timeout,player,&Player::spawn);
+    SpawnTimer->start(3500);
+
+
 }
+
+
+
+
 
